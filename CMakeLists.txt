@@ -7,7 +7,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(sorting)
-add_subdirectory(leetcode)
 add_subdirectory(tests)
 #add_subdirectory(common)
 
@@ -18,3 +17,6 @@ file(GLOB common_lib_src
 add_library(common_lib INTERFACE)
 target_include_directories(common_lib INTERFACE common)
 set_target_properties(common_lib PROPERTIES LINKER_LANGUAGE CXX)
+
+add_library(LeetcodeCpp INTERFACE)
+target_include_directories(LeetcodeCpp INTERFACE leetcode)
