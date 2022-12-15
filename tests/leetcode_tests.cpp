@@ -3,6 +3,8 @@
 #include "sum_list_lcci.hpp"
 #include "route_between_nodes_lcci.hpp"
 #include "sorted_stack_lcci.hpp"
+#include "kth_magic_number_lcci.hpp"
+#include "find_closest_lcci.hpp"
 #include <iostream>
 
 TEST_CASE("Test one way lcci") {
@@ -36,6 +38,18 @@ TEST_CASE("Test sorted stack lcci") {
   sortedStack.push(3);
 
   REQUIRE(sortedStack.peek() == 1);
+}
+
+TEST_CASE("Test find closest lcci") {
+  FindClosestSolution soultion;
+  vector<string> data1 = {"I","am","a","student","from","a","university","in","a","city"};
+  int res1 = soultion.findClosest(data1, "a", "student");
+  REQUIRE(res1 == 1);
+}
+
+TEST_CASE("Test kth magic number lcci") {
+  kthMagicNumberSolution solution;
+  REQUIRE(solution.getKthMagicNumber(8) == 25);
 }
 //
 // Created by cxy on 2022/12/8.
