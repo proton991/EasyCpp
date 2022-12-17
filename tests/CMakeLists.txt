@@ -4,8 +4,8 @@ add_executable(datastructure_tests catch.hpp datastructure_tests.cpp unit_testin
 
 target_include_directories(sorting_tests PUBLIC ${CMAKE_SOURCE_DIR}/sorting)
 target_link_libraries(sorting_tests common_lib)
+target_include_directories(sorting_tests PUBLIC ${CMAKE_SOURCE_DIR}/profile)
 
-#target_include_directories(sorting_tests PUBLIC ${CMAKE_SOURCE_DIR}/common)
 target_include_directories(leetcode_tests PUBLIC ${CMAKE_SOURCE_DIR}/leetcode)
 target_include_directories(datastructure_tests PUBLIC ${CMAKE_SOURCE_DIR}/datastructures)
 
