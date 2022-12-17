@@ -1,6 +1,7 @@
 #include "catch.hpp"
 #include "graph.hpp"
 #include "node.hpp"
+#include "stack.hpp"
 
 TEST_CASE("node tests") {
   ListNode<int> node0{0};
@@ -9,7 +10,22 @@ TEST_CASE("node tests") {
   node0.SetNext(&node1);
   node1.SetNext(&node2);
 
-  REQUIRE(node0.GetNext()->GetNext()->GetValue() == 2);
+  REQUIRE(node0.GetNext()->GetNext()->GetItem() == 2);
+}
+
+TEST_CASE("stack tests") {
+  Stack<int> st;
+  st.Push(1);
+  st.Push(2);
+  st.Push(3);
+  REQUIRE(st.GetSize() == 3);
+  REQUIRE(st.IsEmpty() == false);
+  REQUIRE(st.Top() == 3);
+  st.Pop();
+  st.Pop();
+  st.Pop();
+  REQUIRE(st.Pop() == false);
+  REQUIRE(st.IsEmpty() == true);
 }
 
 TEST_CASE("graph tests") {

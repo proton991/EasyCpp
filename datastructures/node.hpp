@@ -6,20 +6,18 @@ class ListNode {
 public:
   ListNode() = default;
 
-  explicit ListNode(const T& val) : m_val(val), m_next(nullptr) {}
+  explicit ListNode(const T& val) : m_item(val), m_next(nullptr) {}
 
-  ListNode(const T& val, ListNode<T>* next) : m_val(val), m_next(next) {}
+  ListNode(const T& val, ListNode<T>* next) : m_item(val), m_next(next) {}
 
   void SetNext(ListNode<T>* next) { m_next = next; }
 
-  void SetValue(const T& val) { m_val = val; }
-
-  T GetValue() const { return m_val; }
+  T GetItem() const { return m_item; }
 
   ListNode<T>* GetNext() const { return m_next; }
 
 private:
-  T m_val;
+  T m_item;
   ListNode<T>* m_next;
 };
 
