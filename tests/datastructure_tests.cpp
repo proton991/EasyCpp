@@ -2,6 +2,7 @@
 #include "graph.hpp"
 #include "node.hpp"
 #include "stack.hpp"
+#include "deque.hpp"
 
 TEST_CASE("node tests") {
   ListNode<int> node0{0};
@@ -57,4 +58,20 @@ TEST_CASE("graph tests") {
   graph.Print();
   REQUIRE(graph.Dijkstra(0, 8) == 14);
   REQUIRE(graph.FloydWarshall(0, 8) == 14);
+}
+
+TEST_CASE("deque test") {
+  Deque<int> deque;
+  deque.PushBack(1);
+  deque.PushBack(2);
+  deque.PushBack(3);
+
+  REQUIRE(deque.Front() == 1);
+  deque.PopFront();
+  REQUIRE(deque.Front() == 2);
+  deque.PopFront();
+  REQUIRE(deque.Front() == 3);
+  deque.PopFront();
+
+  REQUIRE(deque.IsEmpty() == true);
 }

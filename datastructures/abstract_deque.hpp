@@ -8,13 +8,13 @@ class AbstractDeque {
 
   virtual void PushFront(const T& val) = 0;
 
-  virtual T PopFront() = 0;
+  virtual void PopFront() = 0;
 
   virtual const T& Front() const = 0;
 
   virtual void PushBack(const T& val) = 0;
 
-  virtual T PopBack() = 0;
+  virtual void PopBack() = 0;
 
   virtual const T& Back() const = 0;
 };
