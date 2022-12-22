@@ -5,6 +5,7 @@
 #include "sorted_stack_lcci.hpp"
 #include "kth_magic_number_lcci.hpp"
 #include "find_closest_lcci.hpp"
+#include "rank_from_stream_lcci.hpp"
 #include <iostream>
 
 TEST_CASE("Test one way lcci") {
@@ -50,6 +51,19 @@ TEST_CASE("Test find closest lcci") {
 TEST_CASE("Test kth magic number lcci") {
   kthMagicNumberSolution solution;
   REQUIRE(solution.getKthMagicNumber(8) == 25);
+}
+
+TEST_CASE("Test rank from stream lcci") {
+  StreamRank* obj = new StreamRank();
+  obj->track(4);
+  obj->track(3);
+  obj->track(5);
+
+  REQUIRE(obj->getRankOfNumber(8) == 3);
+  obj->track(3);
+  obj->track(1);
+  obj->track(5);
+  REQUIRE(obj->getRankOfNumber(3) == 3);
 }
 //
 // Created by cxy on 2022/12/8.
