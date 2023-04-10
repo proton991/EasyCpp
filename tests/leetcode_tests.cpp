@@ -5,9 +5,8 @@
 #include "sorted_stack_lcci.hpp"
 #include "kth_magic_number_lcci.hpp"
 #include "find_closest_lcci.hpp"
-#include "subsets.hpp"
+#include "rank_from_stream_lcci.hpp"
 #include <iostream>
-#include <algorithm>
 
 TEST_CASE("Test one way lcci") {
   OneEditAwaySolution solution;
@@ -54,14 +53,17 @@ TEST_CASE("Test kth magic number lcci") {
   REQUIRE(solution.getKthMagicNumber(8) == 25);
 }
 
-TEST_CASE("Test subsets") {
-  vector<int> nums = {1, 2, 3};
-  SubsetsSolution solution;
-  auto res = solution.subsets(nums);
-  vector<vector<int>> expected = {{},{1}, {2}, {3}, {1,2}, {1,3}, {2,3}, {1,2,3}};
-  std::sort(expected.begin(), expected.end());
-  std::sort(res.begin(), res.end());
-  REQUIRE(expected == res);
+TEST_CASE("Test rank from stream lcci") {
+  StreamRank* obj = new StreamRank();
+  obj->track(4);
+  obj->track(3);
+  obj->track(5);
+
+  REQUIRE(obj->getRankOfNumber(8) == 3);
+  obj->track(3);
+  obj->track(1);
+  obj->track(5);
+  REQUIRE(obj->getRankOfNumber(3) == 3);
 }
 //
 // Created by cxy on 2022/12/8.
