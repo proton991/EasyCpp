@@ -19,7 +19,7 @@ std::vector<int> generate_random_int_vector(int length) {
   std::vector<int> v(length);
   std::random_device device;
   std::mt19937 rng(device());
-  std::uniform_int_distribution<int> distribution(1, 100);
+  std::uniform_int_distribution<int> distribution(1, 500);
   for (int i = 0; i < length; ++i) {
     v[i] = distribution(rng);
   }
